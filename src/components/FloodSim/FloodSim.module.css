@@ -1,0 +1,26 @@
+.floodSimContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.button {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', sans-serif;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: font-size 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.button:hover,
+.running {
+  font-size: 1.3em; /* Increase font size on hover */
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9); /* Opaque background on hover */
+  background-color: rgba(0, 0, 0, 0.7);
+}
