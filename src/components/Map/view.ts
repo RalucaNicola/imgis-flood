@@ -6,6 +6,7 @@ import SceneView from "@arcgis/core/views/SceneView";
 import * as reactiveUtils from "@arcgis/core/core/reactiveUtils";
 import { getMapCenterFromHashParams, setMapCenterToHashParams } from "../../utils/URLHashParams";
 import LayerList from "@arcgis/core/widgets/LayerList";
+import Expand from "@arcgis/core/widgets/Expand";
 let view: __esri.SceneView = null;
 
 const listeners: IHandle[] = [];
@@ -36,14 +37,22 @@ export const initializeView = async (divRef: HTMLDivElement) => {
         view = new SceneView({
             container: divRef,
             map: webmap as WebScene,
-            ui: { components: [] },
+            padding: {
+                top: 50
+            },
+            ui: {
+                components: [],
+                padding: {
+                    top: 50
+                }
+            },
             popup: {
                 dockEnabled: true,
                 dockOptions: {
                     buttonEnabled: false,
                     breakpoint: false
                 },
-                highlightEnabled: false,
+                highlightEnabled: true,
                 defaultPopupTemplateEnabled: false
             }
         });
@@ -57,7 +66,13 @@ export const initializeView = async (divRef: HTMLDivElement) => {
             state.setViewLoaded();
 
             const layerList = new LayerList({ view });
-            view.ui.add(layerList, "bottom-right");
+            const expand = new Expand({
+                view: view,
+                expandIcon: "list",
+                content: layerList,
+                group: "bottom-right"
+            });
+            view.ui.add(expand, "top-right");
             // const mapCenter = getMapCenterFromHashParams();
             // if (mapCenter) {
             //     view.goTo({ zoom: mapCenter.zoom, center: [mapCenter.center.lon, mapCenter.center.lat] });
