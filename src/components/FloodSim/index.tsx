@@ -120,7 +120,7 @@ export const FloodSim: FC<Props> = observer(() => {
         }}
       >
         <p>
-          Zürich 2005{' '}
+          Sihl{' '}
           <span className={styles.volume}>
             300m<sup>3</sup>/s
           </span>
