@@ -1,5 +1,5 @@
 export const mapConfig = {
-  'web-map-id': '5aaa4e6b505a4fa38f6cc701d12a2a36'
+  'web-map-id': 'ad9ae583153c453f824cf0b696c40f5b'
 };
 
 export const portalUrl = 'https://3dgis.maps.arcgis.com';

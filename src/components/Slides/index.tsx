@@ -1,10 +1,8 @@
-import { CalciteButton, CalciteIcon } from '@esri/calcite-components-react';
 import * as styles from './Slides.module.css';
 import state from '../../stores/state';
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { getView } from '../Map/view';
-import * as reactiveUtils from '@arcgis/core/core/reactiveUtils';
 
 interface Props {
   children?: ReactNode;
