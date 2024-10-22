@@ -103,15 +103,16 @@ export const FloodSim: FC<Props> = observer(() => {
   return (
     <div className={styles.floodSimContainer}>
       <h2>Flood simulation</h2>
-      <img
-        src='./assets/flood-2005.png'
-        width='100%'
+      <div
+        className={styles.floodImage}
+        style={{ visibility: imageVisible ? 'visible' : 'hidden', opacity: imageVisible ? 1 : 0 }}
         onClick={() => {
           setImageVisible(false);
         }}
-        className={styles.floodImage}
-        style={{ visibility: imageVisible ? 'visible' : 'hidden', opacity: imageVisible ? 1 : 0 }}
-      ></img>
+      >
+        <img src='./assets/flood-2005.png' width='100%'></img>
+        <div style={{ marginTop: '-2rem', marginLeft: '1rem' }}>Image from Kantonspolizei Zurich</div>
+      </div>
       <div
         className={styles.zurichFlood}
         style={{ cursor: 'pointer' }}

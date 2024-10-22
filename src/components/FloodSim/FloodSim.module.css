@@ -29,6 +29,7 @@
 .floodImage {
   position: fixed;
   left: 0;
+  right: 0;
   z-index: 100;
   cursor: pointer;
   opacity: 0;
